@@ -59,7 +59,6 @@ const WalletSubmission = () => {
     e.preventDefault();
     if (walletAddress) {
       setIsSubmitted(true);
-      // Here you can add API call to submit the wallet address
     }
   };
 
@@ -119,20 +118,21 @@ const WalletSubmission = () => {
 };
 
 const TeamMember = ({ role, name, description }) => (
-  <div className="bg-zinc-900/30 backdrop-blur rounded-lg p-4 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500 group">
-    <div className="flex items-center gap-4">
-      <div className="w-16 h-16 overflow-hidden rounded-full bg-zinc-800 flex-shrink-0">
-        <div className="w-full h-full bg-gradient-to-br from-purple-900/50 to-zinc-800"></div>
-      </div>
+  <div className="bg-zinc-900/30 backdrop-blur rounded-lg p-6 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500 group">
+    <div className="flex items-center gap-6">
+      <img
+        src={`https://i.pravatar.cc/150?u=${name}`}
+        alt={name}
+        className="w-20 h-20 rounded-full object-cover border-2 border-purple-500/30 group-hover:border-purple-500 transition-all duration-500"
+      />
       <div className="flex-1 min-w-0">
         <h3 className="text-lg font-light tracking-wider truncate">{name}</h3>
         <div className="text-purple-400 text-sm font-medium tracking-widest">{role}</div>
-        <p className="text-zinc-400 text-sm leading-relaxed mt-2 line-clamp-2">{description}</p>
+        <p className="text-zinc-400 text-sm leading-relaxed mt-2">{description}</p>
       </div>
     </div>
   </div>
 );
-
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-black text-white bg-gradient-to-b from-purple-900/20">
@@ -142,6 +142,27 @@ const HomePage = () => {
           BVC
         </div>
         <div className="flex items-center gap-6">
+          {/* Social Media Icons */}
+          <div className="flex items-center gap-4">
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               className="text-zinc-400 hover:text-purple-400 transition-colors duration-300 hover:scale-110 transform">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               className="text-zinc-400 hover:text-purple-400 transition-colors duration-300 hover:scale-110 transform">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.53-1.39.52-.46-.01-1.33-.26-1.98-.48-.8-.27-1.43-.42-1.37-.89.03-.25.38-.51 1.03-.78 4.04-1.76 6.74-2.92 8.09-3.48 3.85-1.6 4.64-1.88 5.17-1.89.11 0 .37.03.54.18.14.12.18.28.2.45-.02.07-.02.13-.03.28z"/>
+              </svg>
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer"
+               className="text-zinc-400 hover:text-purple-400 transition-colors duration-300 hover:scale-110 transform">
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.175 13.175 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028z"/>
+              </svg>
+            </a>
+          </div>
           <div className="text-lg font-light tracking-widest border border-zinc-800/50 px-4 py-2 rounded-lg flex items-center gap-2">
             <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
             DUCK VENTURES
@@ -211,9 +232,6 @@ const HomePage = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 relative">
-        {/* Background Effect */}
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 to-transparent"></div>
-
         {/* Project Introduction */}
         <div className="text-center mb-24 max-w-4xl mx-auto">
           <div className="bg-zinc-900/30 backdrop-blur-sm border border-zinc-800/50 rounded-2xl p-12 transform hover:scale-[1.02] transition-all duration-500">
@@ -223,8 +241,27 @@ const HomePage = () => {
             <p className="text-xl text-zinc-300 leading-relaxed tracking-wider mb-6">
               A DAO organization built on Solana, dedicated to AI development and applications.
             </p>
-            <div className="text-lg text-purple-400/90 italic tracking-wide font-light">
+            <div className="text-lg text-purple-400/90 italic tracking-wide font-light mb-8">
               Building the future of AI on Solana blockchain
+            </div>
+
+            <div className="flex items-center justify-center gap-4 bg-zinc-900/50 backdrop-blur-sm p-4 rounded-lg border border-zinc-800/50">
+              <div className="text-zinc-400 font-light">
+                <span className="text-zinc-500">CA: </span>
+                <span className="font-mono">6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPQ</span>
+              </div>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText('6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPQ');
+                }}
+                className="px-4 py-2 bg-purple-600/20 hover:bg-purple-600/30 border border-purple-500/30
+                          rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+                Copy CA
+              </button>
             </div>
           </div>
         </div>
@@ -247,6 +284,7 @@ const HomePage = () => {
         {/* Wallet Submission */}
         <WalletSubmission />
 
+        {/* Two Cards Section */}
         <div className="flex gap-24 max-w-7xl mx-auto mb-32">
           {/* Left Card */}
           <div className="flex-1 bg-zinc-900/50 backdrop-blur rounded-lg p-8 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500 transform hover:-translate-y-2">
@@ -263,8 +301,7 @@ const HomePage = () => {
               Take Assessment
             </button>
           </div>
-
-          {/* Right Card */}
+      {/* Right Card */}
           <div className="flex-1 bg-zinc-900/50 backdrop-blur rounded-lg p-8 border border-zinc-800 hover:border-purple-500/50 transition-all duration-500 transform hover:-translate-y-2">
             <div className="mb-6">
               <Building className="w-12 h-12 text-zinc-400" />
@@ -287,27 +324,38 @@ const HomePage = () => {
           <p className="text-zinc-400 text-center mb-12 tracking-wider">Meet the visionaries behind Black Duck</p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <TeamMember
-              name="James Wilson"
-              role="CEO & Founder"
-              description="Visionary leader with 15+ years experience in blockchain and Web3 technologies."
-            />
-            <TeamMember
-              name="Sarah Chen"
-              role="CTO"
-              description="Technical genius behind our infrastructure. Previously led development at major Web3 projects."
-            />
-            <TeamMember
-              name="Michael Zhang"
-              role="Head of Research"
-              description="PhD in Cryptography. Leading our research initiatives in DeFi innovations."
-            />
-            <TeamMember
-              name="Elena Rodriguez"
-              role="Chief Strategy Officer"
-              description="Strategic mastermind with deep expertise in DeFi protocols and market analysis."
-            />
-          </div>
+  <TeamMember
+    name="James Wilson"
+    role="CEO & Founder"
+    description="Visionary leader with 15+ years experience in blockchain and Web3 technologies."
+  />
+  <TeamMember
+    name="Sarah Chen"
+    role="CTO"
+    description="Technical genius behind our infrastructure. Previously led development at major Web3 projects."
+  />
+  <TeamMember
+    name="Michael Zhang"
+    role="Head of Research"
+    description="PhD in Cryptography. Leading our research initiatives in DeFi innovations."
+  />
+  <TeamMember
+    name="Elena Rodriguez"
+    role="Chief Strategy Officer"
+    description="Strategic mastermind with deep expertise in DeFi protocols and market analysis."
+  />
+  {/* 新增的两位成员 */}
+  <TeamMember
+    name="David Park"
+    role="Head of AI Development"
+    description="AI visionary with expertise in machine learning and blockchain integration. Previously led AI projects at top tech companies."
+  />
+  <TeamMember
+    name="Lisa Anderson"
+    role="Head of Community & Growth"
+    description="Community building expert with deep Web3 experience. Successfully grew multiple DAOs from zero to thriving ecosystems."
+  />
+</div>
 
           <div className="text-center mt-12">
             <button className="border border-zinc-600 hover:bg-zinc-800 px-6 py-2 rounded-md transition-all duration-300 hover:scale-105 text-sm tracking-wider">
